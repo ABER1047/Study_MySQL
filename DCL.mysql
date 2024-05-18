@@ -1,0 +1,32 @@
+-- 권한 등급 종류
+-- DBA
+-- RESOURCE - DB및 테이블 생성 가능
+-- CONNECT - 값 수정 없이 검색만 사용 가능
+
+
+-- admin한테 "학생" 테이블에 대한 DBA 권한 주기
+GRANT DBA ON 학생 TO admin;
+
+-- teacher한테 "학생" 테이블에 대한 RESOURCE권한 주고 다른 사람에게 권한을 부여할 수 있는 권한도 주기
+GRANT RESOURCE ON 학생 TO teacher WITH GRANT OPTION;
+
+-- student한테 "학생" 테이블에 대한 CONNECT권한 주기
+GRANT CONNECT TO student;
+
+-- dropped_out_teacher한테 "학생" 테이블에 대한 업데이트 권한 뺏음
+REVOKE GRANT OPTION FOR UPDATE ON 학생 FROM dropped_out_teacher;
+
+
+
+
+-- 세이브 포인트 생성
+SAVEPOINT s1;
+
+-- 커밋
+COMMIT;
+
+-- 세이브 포인트 없이 롤백
+ROLLBACK;
+
+-- 세이브 포인트로 롤백
+ROLLBACK TO s1;

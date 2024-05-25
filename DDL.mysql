@@ -1,4 +1,5 @@
 -- 데이터 타입
+-- VAR(최대 문자수)
 -- VARCHAR(최대 문자수) - 가변형 문자
 -- INTEGER
 -- SMALLINT

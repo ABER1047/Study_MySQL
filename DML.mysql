@@ -19,6 +19,10 @@ UPDATE 학생
 SET 학과인원 = 학과인원 + 8;
 WHERE 학과 = '경제';
 
+update 학생 inner join 학과
+on 학생.속성1 = 학과.속성1
+set 학생.검색량 = 학과.검색량
+where ...
 
 
 
